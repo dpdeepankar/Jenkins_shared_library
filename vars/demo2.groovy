@@ -8,13 +8,19 @@ def call(Map config = [:]){
 
 		stages {
 			stage('Build'){
-				echo "building ${appName}"
+				steps {
+					echo "building ${appName}"
+				}
 			}
 			stage('Test'){
-				echo "Testing Docker image ${dockerImage}"
+				steps{
+					echo "Testing Docker image ${dockerImage}"
+				}
 			}
 			stage('Deploy'){
-				echo "Deployed version ${version}"
+				steps{
+					echo "Deployed version ${version}"
+				}
 			}
 		}
 	}
